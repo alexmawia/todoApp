@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "925261031836",
+    "firebase_url": "https://dailytask-5a757.firebaseio.com",
+    "project_id": "dailytask-5a757",
+    "storage_bucket": "dailytask-5a757.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:925261031836:android:19f6d12f6625c87daec059",
+        "android_client_info": {
+          "package_name": "com.example.dailytask"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "925261031836-ok3tp6v3t435p31jriq5tk5pj65pt2kb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dailytask",
+            "certificate_hash": "c5644c4ad577c79de01612f66a5d172644463a4c"
+          }
+        },
+        {
+          "client_id": "925261031836-lp8lb7dro1qjpgccgn7cbr7smijmor29.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAx25z6R9P8TCyRRamYnyRx8pxsA7XAlkA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "925261031836-lp8lb7dro1qjpgccgn7cbr7smijmor29.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
