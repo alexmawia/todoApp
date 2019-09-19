@@ -1,26 +1,41 @@
 package com.example.dailytask
 
+import android.annotation.SuppressLint
+import android.content.Context
 import com.google.firebase.database.DatabaseReference
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import com.example.dailytask.Model.Task
+import android.widget.*
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.*
+
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_add.*
 
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.recyclerView
+import kotlinx.android.synthetic.main.activity_main.view.*
+import kotlinx.android.synthetic.main.list_item.*
 import java.util.*
+import android.widget.Adapter as AndroidWidgetAdapter
 
 class MainActivity : AppCompatActivity() {
 
 
 
 
+    //var todoList = mutableListOf<ToDo>()
 
+
+
+
+    val recAdapter = adapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,39 +45,48 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+        //recyclerView.layoutManager = LinearLayoutManager(this.applicationContext)
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(applicationContext)
+        recyclerView.adapter= recAdapter
+        recAdapter.submitList(todos)
+
+
+
+
+
+
+
+
+
         fab.setOnClickListener { view ->
             val intent= Intent(this, addActivity::class.java)
             startActivity(intent)
 
 
-
-
-
-
             }
 
 
             }
 
+    override fun onResume() {
+        super.onResume()
+        var prefs = getSharedPreferences("com.example.dailytask", Context.MODE_PRIVATE)
+        var todos = prefs.getStringSet("todostrings", setOf())?.toMutableSet()
 
 
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
+
+
+
+
+
+
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
 
 
-        }
-    }
-
-}
+}}
